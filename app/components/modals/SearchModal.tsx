@@ -40,10 +40,6 @@ const SearchModal = () => {
     key: 'selection'
   });
 
-  const Map = useMemo(() => dynamic(() => import('../Map'), { 
-    ssr: false 
-  }), [location]);
-
   const onBack = useCallback(() => {
     setStep((value) => value - 1);
   }, []);
