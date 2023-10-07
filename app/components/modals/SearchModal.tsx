@@ -40,6 +40,10 @@ const SearchModal = () => {
     key: 'selection'
   });
 
+  const Map = useMemo(() => dynamic(() => import('../Map'), { 
+    ssr: false 
+  }), [location]);
+
   const onBack = useCallback(() => {
     setStep((value) => value - 1);
   }, []);
@@ -125,6 +129,7 @@ const SearchModal = () => {
           setLocation(value as CountrySelectValue)} 
       />
       <hr />
+      <Map center={location?.latlng} />
     </div>
   )
 
