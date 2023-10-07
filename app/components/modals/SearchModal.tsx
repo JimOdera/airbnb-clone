@@ -129,7 +129,8 @@ const SearchModal = () => {
           setLocation(value as CountrySelectValue)} 
       />
       <hr />
-      <Map center={location?.latlng} />
+      <Map center={location?.latlng ? location.latlng.split(',').map(parseFloat) : undefined} />
+      {/* <Map center={location?.latlng} /> */}
     </div>
   )
 
